@@ -23,12 +23,14 @@ import android.widget.Toast;
     }
 
     // inflate the item view layout to the view holder.
+    // View holder holds the elements(will show in the screen) in the recycler view.
     @Override
     public FilterAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false); // inflate the item view to view holder.
         return new ViewHolder(view);
     }
 
+    // assign the elements in the screen to holder to display
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.effect.setText(filters[position].getFilterName());
@@ -41,7 +43,8 @@ import android.widget.Toast;
     }
 
 
-    // ViewHolder is a reference to item. It holds a item view. Contains the items in element.
+    // ViewHolder is a reference to item. It holds a item view..
+    // add OnClickListener to view holder. view holder has the position information.
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private ImageView image;
