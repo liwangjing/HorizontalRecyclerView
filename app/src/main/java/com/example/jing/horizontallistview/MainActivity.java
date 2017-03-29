@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Filter[] getFilters() {
+        // As the view is from right to left, so the position 0 will at the right side of the list.
+        // So reverse the order when assign to the Adapter.
         for (int i = 0; i <  filterNames.length; i++) {
             filters[i] = new Filter();
             filters[i].setFilterImage(getDrawable(imagesIdentifiers[ filterNames.length - 1 - i]));
